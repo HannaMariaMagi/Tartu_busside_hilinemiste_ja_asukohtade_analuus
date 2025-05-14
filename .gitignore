@@ -1,2 +1,4 @@
 *.csv
 *.zst
+myenv/
+.idea/

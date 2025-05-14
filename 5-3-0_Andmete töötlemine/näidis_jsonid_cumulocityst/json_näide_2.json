@@ -1,0 +1,393 @@
+{
+    "creationTime": "2023-05-31T23:59:45.549+03:00",
+    "entities": [
+        {
+            "id": "15390",
+            "tripUpdate": {
+                "stopTimeUpdates": [
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685566800
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685566800
+                        },
+                        "stopId": "7820035-1",
+                        "stopSequence": 19
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685566980
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685566980
+                        },
+                        "stopId": "7820379-1",
+                        "stopSequence": 20
+                    }
+                ],
+                "trip": {
+                    "directionId": 2,
+                    "routeId": "1",
+                    "startDate": "2023-05-31",
+                    "startTime": "23:40:00",
+                    "tripId": "1376252"
+                }
+            },
+            "vehicle": {
+                "currentStatus": "STOPPED_AT",
+                "currentStopSequence": 19,
+                "position": {
+                    "bearing": 64,
+                    "latitude": 58.353397,
+                    "longitude": 26.681286,
+                    "speed": 0
+                },
+                "stopId": "7820035-1",
+                "timestamp": 1685566781,
+                "vehicle": {
+                    "id": "15390",
+                    "label": "378TNS"
+                }
+            }
+        },
+        {
+            "id": "15410",
+            "tripUpdate": {
+                "stopTimeUpdates": [
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685566740
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685566740
+                        },
+                        "stopId": "7820156-1",
+                        "stopSequence": 15
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685566920
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685566920
+                        },
+                        "stopId": "7820166-1",
+                        "stopSequence": 16
+                    }
+                ],
+                "trip": {
+                    "directionId": 1,
+                    "routeId": "1",
+                    "startDate": "2023-05-31",
+                    "startTime": "23:40:00",
+                    "tripId": "1376304"
+                }
+            },
+            "vehicle": {
+                "currentStatus": "IN_TRANSIT_TO",
+                "currentStopSequence": 15,
+                "position": {
+                    "bearing": 68,
+                    "latitude": 58.368805,
+                    "longitude": 26.772766,
+                    "speed": 11.11
+                },
+                "stopId": "7820156-1",
+                "timestamp": 1685566781,
+                "vehicle": {
+                    "id": "15410",
+                    "label": "387TNS"
+                }
+            }
+        },
+        {
+            "id": "15452",
+            "tripUpdate": {
+                "stopTimeUpdates": [
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685566920
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685566920
+                        },
+                        "stopId": "7820033-1",
+                        "stopSequence": 28
+                    }
+                ],
+                "trip": {
+                    "directionId": 2,
+                    "routeId": "9",
+                    "startDate": "2023-05-31",
+                    "startTime": "23:21:00",
+                    "tripId": "1332005"
+                }
+            },
+            "vehicle": {
+                "currentStatus": "IN_TRANSIT_TO",
+                "currentStopSequence": 28,
+                "position": {
+                    "bearing": 178,
+                    "latitude": 58.359043,
+                    "longitude": 26.730782,
+                    "speed": 9.72
+                },
+                "stopId": "7820033-1",
+                "timestamp": 1685566781,
+                "vehicle": {
+                    "id": "15452",
+                    "label": "391TNS"
+                }
+            }
+        },
+        {
+            "id": "15405",
+            "tripUpdate": {
+                "stopTimeUpdates": [
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516100
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685516100
+                        },
+                        "stopId": "7820378-1",
+                        "stopSequence": 1
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516160
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685516160
+                        },
+                        "stopId": "7820036-1",
+                        "stopSequence": 2
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516160
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685516160
+                        },
+                        "stopId": "7820277-1",
+                        "stopSequence": 3
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516280
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685516280
+                        },
+                        "stopId": "7820218-1",
+                        "stopSequence": 4
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516340
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685516340
+                        },
+                        "stopId": "7820201-1",
+                        "stopSequence": 5
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516460
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685516460
+                        },
+                        "stopId": "7820243-1",
+                        "stopSequence": 6
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516520
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685516520
+                        },
+                        "stopId": "7820061-1",
+                        "stopSequence": 7
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516700
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685516700
+                        },
+                        "stopId": "7820178-1",
+                        "stopSequence": 8
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685516880
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685517000
+                        },
+                        "stopId": "7820088-1",
+                        "stopSequence": 9
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685517060
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685517060
+                        },
+                        "stopId": "7820186-1",
+                        "stopSequence": 10
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685517120
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685517120
+                        },
+                        "stopId": "7820067-1",
+                        "stopSequence": 11
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685517180
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685517180
+                        },
+                        "stopId": "7820027-1",
+                        "stopSequence": 12
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685517300
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685517300
+                        },
+                        "stopId": "7820063-1",
+                        "stopSequence": 13
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685517360
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685517360
+                        },
+                        "stopId": "7820015-1",
+                        "stopSequence": 14
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685517540
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685517540
+                        },
+                        "stopId": "7820156-1",
+                        "stopSequence": 15
+                    },
+                    {
+                        "arrival": {
+                            "delay": 0,
+                            "time": 1685517720
+                        },
+                        "departure": {
+                            "delay": 0,
+                            "time": 1685517720
+                        },
+                        "stopId": "7820166-1",
+                        "stopSequence": 16
+                    }
+                ],
+                "trip": {
+                    "directionId": 1,
+                    "routeId": "1",
+                    "startDate": "2023-05-31",
+                    "startTime": "09:55:00",
+                    "tripId": "1376323"
+                }
+            },
+            "vehicle": {
+                "currentStatus": "IN_TRANSIT_TO",
+                "currentStopSequence": 1,
+                "position": {
+                    "bearing": 55,
+                    "latitude": 58.379925,
+                    "longitude": 26.721876,
+                    "speed": 0
+                },
+                "stopId": "7820378-1",
+                "timestamp": 1685566781,
+                "vehicle": {
+                    "id": "15405",
+                    "label": "Live Pos"
+                }
+            }
+        }
+    ],
+    "header": {
+        "gtfsRealtimeVersion": "1",
+        "incrementality": "FULL_DATASET",
+        "timestamp": 1685566785
+    },
+    "id": "1364052798",
+    "lastUpdated": "2023-05-31T23:59:45.549+03:00",
+    "self": "http://tartu.platvorm.iot.telia.ee/event/events/1364052798",
+    "source": {
+        "id": "194442191",
+        "name": "BUS_Busside_gtfs_feed",
+        "self": "http://tartu.platvorm.iot.telia.ee/inventory/managedObjects/194442191"
+    },
+    "text": "Event",
+    "time": "2023-05-31T20:59:45.538Z",
+    "type": "dal"
+}
