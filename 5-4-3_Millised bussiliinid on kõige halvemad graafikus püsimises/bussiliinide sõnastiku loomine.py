@@ -7,7 +7,7 @@ from pathlib import Path
 input_file = Path("/data/busside_paevased_andmed/2023-05-03.csv")
 
 # Väljundkaust
-output_dir = Path("/data/5-3-3_Millised bussiliinid on kõige halvemad graafikus püsimises")
+output_dir = Path("/5-4-3_Millised bussiliinid on kõige halvemad graafikus püsimises")
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # Väljundfaili nimi sama kuupäevaga
