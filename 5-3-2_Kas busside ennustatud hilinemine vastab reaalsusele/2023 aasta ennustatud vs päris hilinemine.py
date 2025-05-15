@@ -5,7 +5,7 @@ from collections import defaultdict
 import numpy as np
 
 INPUT_FOLDER = "../hilinemised_peatuste_vahel"
-OUTPUT_IMAGE = "monthly_predicted_delay_with_std_2023.png"
+OUTPUT_IMAGE = "monthly_predicted_vs_actual_delay_2023.png"
 
 delay_accumulator = defaultdict(lambda: {'actual': [], 'predicted': []})
 
@@ -37,32 +37,30 @@ for filename in os.listdir(INPUT_FOLDER):
     except Exception as e:
         print(f"⚠️ Skipping {filename}: {e}")
 
-# Arvuta kuu keskmised ja standardhälbed
+# Arvuta kuu keskmised
 summary = pd.DataFrame([
     {
         'month': month,
-        'Keskmine hilinemine': np.mean(values['actual']) if values['actual'] else np.nan,
-        'Hilinemise std': np.std(values['actual']) if values['actual'] else np.nan,
-        'Keskmine prognoositud hilinemine': np.mean(values['predicted']) if values['predicted'] else np.nan,
-        'Prognoosi std': np.std(values['predicted']) if values['predicted'] else np.nan
+        'actual_delay_minutes': np.mean(values['actual']) if values['actual'] else np.nan,
+        'predicted_delay_minutes': np.mean(values['predicted']) if values['predicted'] else np.nan
     }
     for month, values in delay_accumulator.items()
 ])
 
 summary = summary.set_index('month').reindex(range(1, 13)).sort_index()
 
-# Joonista veerugraafik koos standardhälvetega
+# Joonista veerugraafik
 fig, ax = plt.subplots(figsize=(12, 6))
 bar_width = 0.4
 months = summary.index
 
-ax.bar(months - bar_width/2, summary['Keskmine hilinemine'],
-       yerr=summary['Hilinemise std'], width=bar_width, label="Tegelik hilinemine", capsize=5)
+ax.bar(months - bar_width/2, summary['actual_delay_minutes'],
+       width=bar_width, label="Tegelik hilinemine")
 
-ax.bar(months + bar_width/2, summary['Keskmine prognoositud hilinemine'],
-       yerr=summary['Prognoosi std'], width=bar_width, label="Prognoositud hilinemine", capsize=5)
+ax.bar(months + bar_width/2, summary['predicted_delay_minutes'],
+       width=bar_width, label="Prognoositud hilinemine")
 
-ax.set_title("Keskmine busside hilinemine ja prognoos koos standardhälvetega (2023)")
+ax.set_title("Keskmine busside hilinemine ja prognoos (2023)")
 ax.set_xlabel("Kuu")
 ax.set_ylabel("Hilinemine (minutites)")
 ax.set_xticks(range(1, 13))
@@ -71,4 +69,10 @@ ax.set_xticklabels(['Jaan', 'Veebr', 'Märts', 'Apr', 'Mai', 'Juun',
 ax.legend()
 plt.tight_layout()
 plt.savefig(OUTPUT_IMAGE)
-print(f"✅ Graafik koos standardhälvetega salvestatud kui '{OUTPUT_IMAGE}'")
+print(f"✅ Graafik salvestatud kui '{OUTPUT_IMAGE}'")
+
+# Salvesta CSV ilma standardhälveteta
+summary.reset_index().rename(columns={'month': 'Kuu'}).to_csv(
+    "monthly_delays_actual_vs_predicted_2023.csv", index=False)
+
+print("📄 Tabel salvestatud: monthly_delays_actual_vs_predicted_2023.csv")

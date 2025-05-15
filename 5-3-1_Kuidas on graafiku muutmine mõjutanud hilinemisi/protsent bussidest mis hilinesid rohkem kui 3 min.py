@@ -28,7 +28,7 @@ for filename in os.listdir(INPUT_FOLDER):
         # Määrame perioodi
         df['day_of_year'] = df['date'].dt.dayofyear
         df['period'] = df['day_of_year'].apply(
-            lambda d: '01.01–11.06' if d <= 162 else '12.06–27.08' if d <= 239 else '28.08–31.12'
+        lambda d: '01.01–11.06' if d <= 162 else '12.06–27.08' if d <= 239 else '28.08–31.12'
         )
 
         for (year, period), group in df.groupby(['year', 'period']):

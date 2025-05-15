@@ -6,15 +6,15 @@ import os
 # Laadi andmed
 folder_path = "../hilinemised_peatuste_vahel"
 dates_needed = [
-    "2024-05-06", "2024-05-07", "2024-05-08",
-    "2024-05-09", "2024-05-10", "2024-05-11", "2024-05-12"
+    "2023-05-08", "2023-05-09", "2023-05-10",
+    "2023-05-11", "2023-05-12", "2023-05-13", "2023-05-14"
 ]
 
 # Leia ainult valitud failid
 target_files = [
     os.path.join(folder_path, f)
     for f in os.listdir(folder_path)
-    if any(date in f for date in dates_needed) and f.endswith(".csv failid")
+    if any(date in f for date in dates_needed) and f.endswith(".csv")
 ]
 
 # Laadi ja ühenda
@@ -45,13 +45,13 @@ fig, ax = plt.subplots(figsize=(14, 6))
 
 # Jooned
 ax.plot(hourly_avg["datetime_hour"], hourly_avg["actual_delay_min"], label="Tegelik hilinemine", marker='o')
-ax.plot(hourly_avg["datetime_hour"], hourly_avg["predicted_delay_min"], label="Ennustatud hilinemine", marker='s')
-ax.plot(hourly_avg["datetime_hour"], hourly_avg["delay_difference"], label="Vahe (tegelik - ennustatud)", linestyle='--', marker='x')
+ax.plot(hourly_avg["datetime_hour"], hourly_avg["predicted_delay_min"], label="Prognoositud hilinemine", marker='s')
 
 # Kellaaeg ülemisel teljel
+ax.xaxis.set_major_locator(mdates.HourLocator(interval=4))
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
-ax.xaxis.set_major_locator(mdates.HourLocator(interval=2))
 ax.tick_params(axis='x', labelrotation=45)
+fig.subplots_adjust(bottom=0.25)
 
 # Kuupäevad alumisel teljel (päeva keskel)
 days = sorted({dt.date() for dt in hourly_avg["datetime_hour"]})
@@ -62,7 +62,6 @@ secax = ax.secondary_xaxis('bottom', functions=(lambda x: x, lambda x: x))
 secax.set_xticks(date_midpoints)
 secax.set_xticklabels(date_labels)
 secax.tick_params(axis='x', pad=35)
-secax.set_xlabel("Kuupäev")
 
 # Piira X-telge, et eemaldada tühjad ääred
 ax.set_xlim(hourly_avg["datetime_hour"].min(), hourly_avg["datetime_hour"].max())
@@ -70,10 +69,13 @@ secax.set_xlim(hourly_avg["datetime_hour"].min(), hourly_avg["datetime_hour"].ma
 
 # Kujundus
 ax.axhline(0, color='gray', linestyle='--', linewidth=0.8)
-ax.set_title("Tunnipõhine keskmine hilinemine ja vahe (6.–12. mai 2024)")
-ax.set_xlabel("Kellaaeg")
+ax.set_title("Tunnipõhine keskmine hilinemine ja vahe (8.–14. mai 2023)")
+ax.set_xlabel("Kuupäev ja kellaaeg", labelpad=25)  # tõstab teljesildi allapoole
+ax.tick_params(axis='x', labelrotation=45)
+fig.subplots_adjust(bottom=0.35)  # loob ruumi tekstide jaoks
 ax.set_ylabel("Hilinemine (minutit)")
 ax.legend()
 ax.grid(True)
 fig.tight_layout()
+plt.savefig("ennustatud_vs_tegelik_hilinemine.png", dpi=300, bbox_inches="tight")
 plt.show()
